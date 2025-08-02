@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coverage Radius Map</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.7128,-74.0060&zoom=12&size=800x500&scale=2');
+            background-size: cover;
+        }
+        
+        .coverage-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .coverage-circle:hover {
+            opacity: 0.8;
+            z-index: 10;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .info-panel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coverage Radius Map</h1>
+    
+    <div class="controls">
+        <button id="addCircle">Add Coverage Area</button>
+        <button id="clearAll">Clear All</button>
+    </div>
+    
+    <div class="map-container" id="map">
+        <div class="info-panel" id="infoPanel">
+            <p>Click on the map to add coverage areas. Click on circles to remove them.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const map = document.getElementById('map');
+            const addCircleBtn = document.getElementById('addCircle');
+            const clearAllBtn = document.getElementById('clearAll');
+            const infoPanel = document.getElementById('infoPanel');
+            
+            let isAddingMode = false;
+            let circles = [];
+            
+            // Show info panel on hover
+            map.addEventListener('mouseenter', () => {
+                infoPanel.style.display = 'block';
+            });
+            
+            map.addEventListener('mouseleave', () => {
+                infoPanel.style.display = 'none';
+            });
+            
+            // Toggle adding mode
+            addCircleBtn.addEventListener('click', () => {
+                isAddingMode = !isAddingMode;
+                addCircleBtn.textContent = isAddingMode ? 'Cancel' : 'Add Coverage Area';
+                addCircleBtn.style.backgroundColor = isAddingMode ? '#f44336' : '#4CAF50';
+            });
+            
+            // Clear all circles
+            clearAllBtn.addEventListener('click', () => {
+                circles.forEach(circle => {
+                    if (circle.element && circle.element.parentNode) {
+                        circle.element.parentNode.removeChild(circle.element);
+                    }
+                });
+                circles = [];
+            });
+            
+            // Add circle on map click when in adding mode
+            map.addEventListener('click', function(e) {
+                if (!isAddingMode) return;
+                
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Random radius between 50 and 150px
+                const radius = Math.floor(Math.random() * 100) + 50;
+                
+                // Random color
+                const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                const circle = document.createElement('div');
+                circle.className = 'coverage-circle';
+                circle.style.width = radius * 2 + 'px';
+                circle.style.height = radius * 2 + 'px';
+                circle.style.left = x + 'px';
+                circle.style.top = y + 'px';
+                circle.style.backgroundColor = color;
+                
+                // Add click handler to remove circle
+                circle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.parentNode.removeChild(this);
+                    circles = circles.filter(c => c.element !== this);
+                });
+                
+                this.appendChild(circle);
+                
+                // Store circle data
+                circles.push({
+                    element: circle,
+                    x,
+                    y,
+                    radius,
+                    color
+                });
+                
+                // Exit adding mode after placing a circle
+                isAddingMode = false;
+                addCircleBtn.textContent = 'Add Coverage Area';
+                addCircleBtn.style.backgroundColor = '#4CAF50';
+            });
+            
+            // Sample data - you can remove this or use it to pre-populate the map
+            function addSampleData() {
+                const sampleCircles = [
+                    { x: 200, y: 150, radius: 80, color: '#FF5733' },
+                    { x: 400, y: 200, radius: 120, color: '#33FF57' },
+                    { x: 600, y: 300, radius: 90, color: '#3357FF' }
+                ];
+                
+                sampleCircles.forEach(data => {
+                    const circle = document.createElement('div');
+                    circle.className = 'coverage-circle';
+                    circle.style.width = data.radius * 2 + 'px';
+                    circle.style.height = data.radius * 2 + 'px';
+                    circle.style.left = data.x + 'px';
+                    circle.style.top = data.y + 'px';
+                    circle.style.backgroundColor = data.color;
+                    
+                    circle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        this.parentNode.removeChild(this);
+                        circles = circles.filter(c => c.element !== this);
+                    });
+                    
+                    map.appendChild(circle);
+                    
+                    circles.push({
+                        element: circle,
+                        x: data.x,
+                        y: data.y,
+                        radius: data.radius,
+                        color: data.color
+                    });
+                });
+            }
+            
+            // Uncomment to add sample data on load
+            // addSampleData();
+        });
+    </script>
+</body>
+</html>

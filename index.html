@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konnekt Smart Life - Connecting Eldoret to the World</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+     <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha512-sA+UHE4/n4+U0sMcjPqxEcRjOHVn5QGACabBzYbB8+ql7vTqBJZf43Q6QwD2Dz2z/UeKFxmjKcOQ5dlVXc9fgA=="
+    crossorigin=""
+  />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-wifi"></i>
+          <span>Konnekt Smart Life</span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#packages" class="nav-link">Packages</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#coverage" class="nav-link">Coverage</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="btn btn-primary" onclick="openModal('contact-modal')">
+          Get Connected
+        </button>
+        <button class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <!-- Three.js Canvas for 3D Network Visualization -->
+
+      <!-- Hero Container -->
+      <div class="hero-container">
+        <div class="hero-content">
+          <!-- Main Content -->
+          <div class="hero-main">
+            <div class="hero-text-section">
+              <div class="hero-badge fade-in-up">
+                <i class="fas fa-wifi"></i>
+                <span>Connecting Communities Since 2019</span>
+              </div>
+
+              <h1 class="hero-title fade-in-up stagger-1">
+                Bringing
+                <span class="text-primary glow-text">Konnekt Smart Life</span
+                ><br />
+                to Every Home & Business in
+                <span class="hero-title-accent">Eldoret</span>
+              </h1>
+
+              <p class="hero-subtitle fade-in-up stagger-2">
+                Experience lightning-fast internet that bridges the digital
+                divide. Reliable, affordable, and built specifically for our
+                growing community.
+              </p>
+
+              <div class="hero-features fade-in-up stagger-3">
+                <div class="feature-item">
+                  <i class="fas fa-bolt"></i>
+                  <span>Ultra-Fast Speeds</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>99.9% Uptime</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-headset"></i>
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+
+              <div class="hero-cta fade-in-up stagger-4">
+                <button
+                  class="btn btn-primary btn-hero"
+                  onclick="scrollToSection('packages')"
+                >
+                  <span>Explore Packages</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+                <button
+                  class="btn btn-outline-hero"
+                  onclick="openModal('contact-modal')"
+                >
+                  <i class="fas fa-phone"></i>
+                  <span>Get Quote</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Section -->
+          <div class="hero-stats fade-in-up stagger-5">
+            <div
+              class="stat-item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              <div class="stat-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="1500">0</span
+                ><span class="stat-plus">+</span>
+                <p>Homes Connected</p>
+              </div>
+            </div>
+
+            <div
+              class="stat-item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              <div class="stat-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="250">0</span
+                ><span class="stat-plus">+</span>
+                <p>Businesses Served</p>
+              </div>
+            </div>
+
+            <div
+              class="stat-item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="110">0</span
+                ><span class="stat-plus">+</span>
+                <p>Hostels Connected</p>
+              </div>
+            </div>
+
+            <div
+              class="stat-item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
+              <div class="stat-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-number" data-target="90">0</span
+                ><span class="stat-plus">.9%</span>
+                <p>Uptime Guarantee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+      <div class="packages-container">
+        <div class="section-header fade-in-up">
+          <h2>Choose Your Perfect Plan</h2>
+          <p>
+            Flexible internet packages designed for homes and businesses in
+            Eldoret
+          </p>
+        </div>
+
+        <div class="tabs-container">
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="home">Home Plans</button>
+            <button class="tab-btn" data-tab="business">Business Plans</button>
+          </div>
+
+          <!-- Home Plans -->
+          <div class="tab-content active" id="home-tab">
+            <div class="packages-grid">
+              <div class="package-card >
+                <div class="package-header">
+                  <h3>Home 5MBps</h3>
+                  <div class="package-speed">5 Mbps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 1,500</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Active Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Free Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>KSh 2,000 WiFi Router</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Basic Home', 'KSh 2,500')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+
+              <div class="package-card popular >
+                <div class="popular-badge">Most Popular</div>
+                <div class="package-header">
+                  <h3>Home 10MBps</h3>
+                  <div class="package-speed">10 MBps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 2,000</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Active Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Free Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>WiFi Router Included</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Family Plus', 'KSh 4,000')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+
+              <div class="package-card >
+                <div class="package-header">
+                  <h3>HOME 30MBps</h3>
+                  <div class="package-speed">30 MBps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 4,000</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Active Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Free Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>WiFi Router Included</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Premium Home', 'KSh 6,500')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Plans -->
+          <div class="tab-content" id="business-tab">
+            <div class="packages-grid">
+              <div class="package-card >
+                <div class="package-header">
+                  <h3>Business Starter</h3>
+                  <div class="package-speed">30 Mbps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 6,000</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Business Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Free Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Router included</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>No FUP</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Business Starter', 'KSh 8,000')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+
+              <div class="package-card popular >
+                <div class="popular-badge">Best Value</div>
+                <div class="package-header">
+                  <h3>Business Pro</h3>
+                  <div class="package-speed">50 Mbps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 10,000</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Business Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Free Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Router Included</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>No FUP</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Business Pro', 'KSh 15,000')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+
+              <div class="package-card >
+                <div class="package-header">
+                  <h3>Enterprise</h3>
+                  <div class="package-speed">100 Mbps</div>
+                  <div class="package-price">
+                    <span class="price">KSh 20,000</span>
+                    <span class="period">/month</span>
+                  </div>
+                </div>
+                <div class="package-features">
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Unlimited Data</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Dedicated Support</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Professional Installation</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>Router Included</span>
+                  </div>
+                  <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <span>No FUP</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  onclick="openModal('package-modal', 'Enterprise', 'KSh 25,000')"
+                >
+                  Choose Plan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2>Complete Digital Solutions</h2>
+          <p>
+            Beyond internet connectivity, we provide comprehensive digital
+            services for your needs
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card fade-in-up">
+            <div class="service-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Billing System</h3>
+            <p>
+              Automated billing and payment processing with multiple payment
+              options including M-Pesa integration.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Online Payments</li>
+              <li><i class="fas fa-check"></i> Auto-billing</li>
+              <li><i class="fas fa-check"></i> Payment History</li>
+              <li><i class="fas fa-check"></i> Multiple Methods</li>
+            </ul>
+            <button
+              class="btn btn-outline"
+              onclick="openModal('service-modal', 'Billing System')"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <div class="service-card fade-in-up">
+            <div class="service-icon">
+              <i class="fas fa-sms"></i>
+            </div>
+            <h3>Bulk SMS</h3>
+            <p>
+              Reliable bulk SMS services for businesses to reach customers
+              instantly and effectively.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> High Delivery Rate</li>
+              <li><i class="fas fa-check"></i> Scheduled Messages</li>
+              <li><i class="fas fa-check"></i> Contact Management</li>
+              <li><i class="fas fa-check"></i> Analytics</li>
+            </ul>
+            <button
+              class="btn btn-outline"
+              onclick="openModal('service-modal', 'Bulk SMS')"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <div class="service-card fade-in-up">
+            <div class="service-icon">
+              <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <h3>Hotspot Solutions</h3>
+            <p>
+              Complete WiFi hotspot management for hotels, restaurants, and
+              public spaces.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> User Management</li>
+              <li><i class="fas fa-check"></i> Bandwidth Control</li>
+              <li><i class="fas fa-check"></i> Usage Analytics</li>
+              <li><i class="fas fa-check"></i> Custom Branding</li>
+            </ul>
+            <button
+              class="btn btn-outline"
+              onclick="openModal('service-modal', 'Hotspot Solutions')"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage Map & Testimonials -->
+    <section id="coverage" class="coverage-section">
+      <div class="container">
+        <div class="coverage-grid">
+          <!-- Coverage Map -->
+          <div class="coverage-content fade-in-left">
+            <h3>Coverage Areas</h3>
+            <p>
+              We proudly serve multiple areas across Eldoret with reliable
+              high-speed internet connectivity. Click on an area to see details!
+            </p>
+
+            <div class="coverage-map-container" id="map">
+              <img
+                src="/placeholder.svg?height=600&width=800"
+                alt="Eldoret Coverage Map"
+                class="coverage-map-image"
+              />
+              <div
+                class="map-area"
+                data-area="Annex Estate"
+                style="top: 20%; left: 30%; width: 20%; height: 15%"
+              ></div>
+              <div
+                class="map-area"
+                data-area="Langas Estate"
+                style="top: 40%; left: 25%; width: 25%; height: 20%"
+              ></div>
+              <div
+                class="map-area"
+                data-area="Pioneer Estate"
+                style="top: 30%; left: 55%; width: 18%; height: 12%"
+              ></div>
+              <div
+                class="map-area"
+                data-area="Kapsoya"
+                style="top: 10%; left: 50%; width: 15%; height: 10%"
+              ></div>
+              <div
+                class="map-area"
+                data-area="Kimumu"
+                style="top: 5%; left: 70%; width: 10%; height: 8%"
+              ></div>
+              <div
+                class="map-area"
+                data-area="Huruma"
+                style="top: 60%; left: 40%; width: 22%; height: 18%"
+              ></div>
+
+              <div id="map-info-box" class="map-info-box">
+                <h4></h4>
+                <p></p>
+                <button class="btn btn-small" onclick="closeMapInfo()">
+                  Close
+                </button>
+              </div>
+            </div>
+
+            <div class="coverage-areas">
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Annex Estate</span>
+              </div>
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Langas Estate</span>
+              </div>
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Pioneer Estate</span>
+              </div>
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Kapsoya</span>
+              </div>
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Kimumu</span>
+              </div>
+              <div class="area-item">
+                <div class="area-dot"></div>
+                <span>Huruma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonials -->
+          <div class="testimonials-content fade-in-right">
+            <h3>What Our Customers Say</h3>
+
+            <div class="testimonial-slider">
+              <div class="testimonial-card active">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <blockquote>
+                  "Excellent service! The internet is fast and reliable. My
+                  family can stream, work, and study without any issues."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-avatar">S</div>
+                  <div class="author-info">
+                    <h4>Sarah Kipchoge</h4>
+                    <p>Langas Estate</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <blockquote>
+                  "Best ISP in Eldoret! Customer service is outstanding and the
+                  connection is always stable."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-avatar">D</div>
+                  <div class="author-info">
+                    <h4>David Mutai</h4>
+                    <p>Pioneer Estate</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <blockquote>
+                  "Affordable packages with great speeds. Installation was quick
+                  and professional."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-avatar">G</div>
+                  <div class="author-info">
+                    <h4>Grace Wanjiku</h4>
+                    <p>Annex Estate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-dots">
+              <span class="dot active" onclick="currentTestimonial(1)"></span>
+              <span class="dot" onclick="currentTestimonial(2)"></span>
+              <span class="dot" onclick="currentTestimonial(3)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content fade-in-left">
+            <h2>Bridging the Digital Divide</h2>
+            <p>
+              Founded in Eldoret with a mission to connect our community to the
+              digital world. We believe that reliable internet access is not a
+              luxury, but a necessity for education, business, and personal
+              growth.
+            </p>
+
+            <div class="timeline">
+              <div class="timeline-item fade-in-up">
+                <div class="timeline-year">2018</div>
+                <p>Founded in Eldoret with 50 customers</p>
+              </div>
+              <div class="timeline-item fade-in-up">
+                <div class="timeline-year">2020</div>
+                <p>Expanded to serve 500+ homes and businesses</p>
+              </div>
+              <div class="timeline-item fade-in-up">
+                <div class="timeline-year">2022</div>
+                <p>Launched enterprise solutions and hotspot services</p>
+              </div>
+              <div class="timeline-item fade-in-up">
+                <div class="timeline-year">2024</div>
+                <p>Serving 2,500+ customers across Eldoret</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual fade-in-right">
+            <div class="about-image">
+              <i class="fas fa-globe"></i>
+              <p>Connecting Communities</p>
+            </div>
+
+            <div class="reliability-badge">
+              <div class="badge-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="badge-info">
+                <h4>99.9% Uptime</h4>
+                <p>Guaranteed Reliability</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2>Get Connected Today</h2>
+          <p>
+            Ready to experience reliable high-speed internet? Contact us for
+            installation or support.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-container fade-in-left">
+            <div class="contact-form-card">
+              <h3>Send us a message</h3>
+              <p>
+                Fill out the form below and we'll get back to you within 24
+                hours.
+              </p>
+
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                    />
+                    <span class="error-message"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required />
+                    <span class="error-message"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                  <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required />
+                  <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                  ></textarea>
+                  <span class="error-message"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-loading">Sending...</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-info fade-in-right">
+            <h3>Contact Information</h3>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+254 700 123 456</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@konnektsmartlife.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Office</h4>
+                  <p>Eldoret Town, Kenya</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h4>Support Hours</h4>
+                  <p>24/7 Customer Support</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-links">
+              <h3>Quick Links</h3>
+              <div class="links-grid">
+                <a href="#packages">Packages</a>
+                <a href="#services">Services</a>
+                <a href="#coverage">Coverage</a>
+                <a href="#about">About Us</a>
+                <a href="#" onclick="openModal('support-modal')">Support</a>
+                <a href="#" onclick="openModal('faq-modal')">FAQ</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <i class="fas fa-wifi"></i>
+            <span>Konnekt Smart Life</span>
+          </div>
+          <p>
+            © 2024 Konnekt Smart Life. All rights reserved. Connecting Eldoret
+            to the world.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Modals -->
+    <!-- Package Modal -->
+    <div class="modal" id="package-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="package-modal-title">Package Details</h3>
+          <button class="modal-close" onclick="closeModal('package-modal')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="package-details">
+            <div class="package-info">
+              <h4 id="package-name">Package Name</h4>
+              <p class="package-price-modal" id="package-price">Price</p>
+            </div>
+            <form id="package-form" class="package-form">
+              <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                  type="text"
+                  id="customer-name"
+                  name="customerName"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <label for="customer-email">Email</label>
+                <input
+                  type="email"
+                  id="customer-email"
+                  name="customerEmail"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="customer-phone"
+                  name="customerPhone"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <label for="customer-address">Installation Address</label>
+                <textarea
+                  id="customer-address"
+                  name="customerAddress"
+                  rows="3"
+                  required
+                ></textarea>
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <label for="installation-date"
+                  >Preferred Installation Date</label
+                >
+                <input
+                  type="date"
+                  id="installation-date"
+                  name="installationDate"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span class="btn-text">Submit Application</span>
+                <span class="btn-loading">Processing...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="modal" id="service-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="service-modal-title">Service Details</h3>
+          <button class="modal-close" onclick="closeModal('service-modal')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="service-details">
+            <!-- Service details will be populated by JavaScript -->
+          </div>
+          <button class="btn btn-primary" onclick="openModal('contact-modal')">
+            Get Quote
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contact-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Contact Us</h3>
+          <button class="modal-close" onclick="closeModal('contact-modal')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="contact-modal-form" class="contact-form">
+            <div class="form-group">
+              <label for="modal-name">Full Name</label>
+              <input type="text" id="modal-name" name="name" required />
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="modal-email">Email</label>
+              <input type="email" id="modal-email" name="email" required />
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="modal-phone">Phone Number</label>
+              <input type="tel" id="modal-phone" name="phone" required />
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="modal-service">Service Interest</label>
+              <select id="modal-service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="home-internet">Home Internet</option>
+                <option value="business-internet">Business Internet</option>
+                <option value="billing-system">Billing System</option>
+                <option value="bulk-sms">Bulk SMS</option>
+                <option value="hotspot">Hotspot Solutions</option>
+              </select>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-group">
+              <label for="modal-message">Message</label>
+              <textarea
+                id="modal-message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+              <span class="error-message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading">Sending...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div class="modal" id="faq-modal">
+      <div class="modal-content modal-large">
+        <div class="modal-header">
+          <h3>Frequently Asked Questions</h3>
+          <button class="modal-close" onclick="closeModal('faq-modal')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>What internet speeds do you offer?</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We offer various speed packages ranging from 10 Mbps for basic
+                  home use to 100 Mbps for enterprise solutions. All packages
+                  include unlimited data.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>How long does installation take?</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Standard installation typically takes 2-4 hours. Our
+                  technicians will schedule a convenient time and ensure
+                  everything is working perfectly before leaving.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Do you provide 24/7 customer support?</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes, we provide round-the-clock customer support through
+                  phone, email, and our online portal. Our technical team is
+                  always ready to assist you.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>What payment methods do you accept?</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We accept M-Pesa, bank transfers, cash payments, and online
+                  payments through our billing portal. Auto-billing options are
+                  also available.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                <h4>Is there a contract period?</h4>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We offer flexible plans with no long-term contracts for home
+                  users. Business packages may have optional contract terms with
+                  better rates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div class="modal" id="support-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Technical Support</h3>
+          <button class="modal-close" onclick="closeModal('support-modal')">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="support-options">
+            <div class="support-option">
+              <i class="fas fa-phone"></i>
+              <h4>Call Support</h4>
+              <p>+254 700 123 456</p>
+              <small>Available 24/7</small>
+            </div>
+            <div class="support-option">
+              <i class="fas fa-envelope"></i>
+              <h4>Email Support</h4>
+              <p>ccs@konnektsmartlife.com</p>
+              <small>Response within 2 hours</small>
+            </div>
+            <div class="support-option">
+              <i class="fas fa-comments"></i>
+              <h4>Live Chat</h4>
+              <p>Chat with our team</p>
+              <button class="btn btn-primary btn-small">Start Chat</button>
+            </div>
+          </div>
+
+          <div class="support-form">
+            <h4>Submit a Support Ticket</h4>
+            <form id="support-form">
+              <div class="form-group">
+                <label for="support-name">Name</label>
+                <input type="text" id="support-name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="support-email">Email</label>
+                <input type="email" id="support-email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="support-issue">Issue Type</label>
+                <select id="support-issue" name="issueType" required>
+                  <option value="">Select issue type</option>
+                  <option value="connection">Connection Issues</option>
+                  <option value="billing">Billing Questions</option>
+                  <option value="technical">Technical Support</option>
+                  <option value="installation">Installation Request</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="support-description">Description</label>
+                <textarea
+                  id="support-description"
+                  name="description"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                Submit Ticket
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha512-mmxg+6FYO3bEvM1JhIPXpN2NKh+fMOMjZ3Q9gAk2Gh8ljBme7oBzK/MhLEeIvUHE1Pr2TPN2ljYKT2CkJdRjPA=="
+  crossorigin=""
+></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
+
+<script>
+  // Initialize map centered in Eldoret, Kenya
+  const map = L.map('map').setView([0.5143, 35.2698], 13);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Example locations with coverage radius in meters
+  const coveragePoints = [
+    { lat: 0.5143, lng: 35.2698, radius: 500 },
+    { lat: 0.5200, lng: 35.2800, radius: 300 },
+    { lat: 0.5100, lng: 35.2600, radius: 400 }
+  ];
+
+  // Add coverage circles
+  coveragePoints.forEach(point => {
+    L.circle([point.lat, point.lng], {
+      color: 'blue',
+      fillColor: '#3f83f8',
+      fillOpacity: 0.3,
+      radius: point.radius
+    }).addTo(map);
+  });
+</script>
+  </body>
+</html>
