@@ -1,0 +1,11 @@
+# robots.txt for Konnekt Smart Life
+# Controls how search engines crawl the site
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backend/
+Allow: /
+
+# Sitemap location
+Sitemap: https://konnektsmartlife.com/sitemap.xml

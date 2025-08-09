@@ -9,13 +9,15 @@
 </head>
 <body>
   <!-- Navigation (re-use from index.html for consistency) -->
-  <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
       <div class="nav-container">
-          <div class="nav-brand">
-              <i class="fas fa-wifi"></i>
-              <span>Konnekt Smart Life</span>
+        <div class="nav-brand">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="Konnekt Smart Life Logo" />
           </div>
-          <div class="nav-menu" id="nav-menu">
+          <span>Konnekt <span class="glow-text text-primary">Smart</span> Life</span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
               <a href="index.html#home" class="nav-link">Home</a>
               <a href="index.html#packages" class="nav-link">Packages</a>
               <a href="index.html#services" class="nav-link">Services</a>
@@ -23,14 +25,17 @@
               <a href="index.html#about" class="nav-link">About</a>
               <a href="index.html#contact" class="nav-link">Contact</a>
           </div>
-          <button class="nav-toggle" id="nav-toggle">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
-          <button class="btn btn-primary" onclick="window.location.href='index.html#contact'">Get Connected</button>
+
+        <button class="btn btn-primary" onclick="openModal('contact-modal')">
+          Get Connected
+        </button>
+        <button class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-  </nav>
+    </nav>
 
   <main class="static-page-content">
     <h1>Privacy Policy for Konnekt Smart Life</h1>
@@ -117,21 +122,42 @@
       <li>By phone number: +254 700 123 456</li>
     </ul>
   </main>
-
+   <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
   <!-- Footer (re-use from index.html for consistency) -->
-  <footer class="footer">
+ <footer class="footer">
       <div class="container">
-          <div class="footer-content">
-              <div class="footer-brand">
-                  <i class="fas fa-wifi"></i>
-                  <span>Konnekt Smart Life</span>
-              </div>
-              <p>© 2024 Konnekt Smart Life. All rights reserved. Connecting Eldoret to the world.</p>
+        <div class="footer-content">
+          <div class="footer-brand">
+           <div class="logo">
+            <img src="./assets/images/logo.png" alt="Konnekt Smart Life Logo" />
           </div>
+            <span>Konnekt Smart Life</span>
+          </div>
+          <p>
+            © 2024 Konnekt Smart Life. All rights reserved. Connecting Eldoret
+            to the world.
+          </p>
+        </div>
       </div>
-  </footer>
+    </footer>
 
   <script src="script.js"></script>
   <script type="module" src="three-network.js"></script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/688427a12f66bc191640d3c4/1j123lkd8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

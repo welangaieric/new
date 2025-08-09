@@ -1,0 +1,27 @@
+# llm.txt for Konnekt Smart Life
+# Controls how AI crawlers (LLMs) can use the site's content
+
+User-agent: GPTBot
+Disallow: /admin/
+Disallow: /private/
+Disallow: /members/
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /admin/
+Disallow: /private/
+Disallow: /members/
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /admin/
+Disallow: /private/
+Disallow: /members/
+Allow: /
+
+# Catch-all rule for any other AI crawlers
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /members/
+Allow: /

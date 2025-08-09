@@ -5,7 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 :root {
   --primary-color: #00df81;
   --primary-dark: #00c470;
@@ -45,14 +47,10 @@ section{
   justify-content: center;
 }
 .container {
+ width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 90%;
-  /* max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px; */
 }
 
 /* Animations */
@@ -897,6 +895,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  width: 100%;
 }
 
 .service-card {
@@ -1075,7 +1074,7 @@ section {
 
 .coverage-areas {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -1245,7 +1244,12 @@ section {
 
 .about-image {
   aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  background-image: url('./assets/images/eldoret.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); */
   border-radius: var(--border-radius-lg);
   display: flex;
   flex-direction: column;
@@ -1254,7 +1258,26 @@ section {
   color: white;
   text-align: center;
 }
-
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.89), rgba(0, 223, 130, 0.192));
+  z-index: 1; /* Below Three.js canvas */
+}
+.image_content{
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: absolute;
+z-index: 2;
+}
 .about-image i {
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -1264,7 +1287,15 @@ section {
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+.credits{
+  position: absolute;
+  z-index: 3;
+  bottom: 8px;
+  left: 8px;
+  font-style: italic;
+  font-weight: 200 !important;
+  font-size: .7rem !important;
+}
 .reliability-badge {
   position: absolute;
   bottom: -20px;
@@ -1276,6 +1307,7 @@ section {
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 3;
 }
 
 .badge-icon {
@@ -1348,7 +1380,15 @@ section {
   flex-direction: column;
   gap: 1.5rem;
 }
-
+.contact-section .contact-form label{
+  color: var(--primary-dark) !important;
+}
+.contact-section .contact-form input{
+  color: var(--bg-light) !important;
+}
+.contact-section .contact-form textarea{
+  color: var(--bg-color) !important;
+}
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1477,6 +1517,7 @@ section {
   justify-content: space-between;
   align-items: center;
   color: var(--text-white);
+  gap: 5px;
 }
 
 .footer-brand {
@@ -1491,6 +1532,16 @@ section {
   margin-right: 0.5rem;
   font-size: 1.8rem;
 }
+.footer-brand .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.footer-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .footer p {
   color: rgba(255, 255, 255, 0.8);
@@ -1500,7 +1551,7 @@ section {
 .scroll-to-top {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
   width: 50px;
   height: 50px;
   background: var(--primary-color);
@@ -1589,8 +1640,15 @@ section {
 
 .modal-body {
   padding: 2rem;
+  color: var(--secondary-color) !important;
 }
-
+.modal-body .form-group, input ,label,select,textarea{
+  color: var(--secondary-color) !important;
+  text-align: left;
+}
+.modal-body .form-group input,textarea,select{
+  border:1px solid var(--primary-dark) !important;
+}
 .package-details {
   text-align: center;
   margin-bottom: 2rem;

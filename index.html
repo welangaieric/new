@@ -4,6 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konnekt Smart Life - Connecting Eldoret to the World</title>
+
+     <!-- SEO Meta Tags -->
+    <title>Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret</title>
+    <meta name="description" content="Get fast, affordable, and reliable internet services in Eldoret. Konnekt Smart Life offers high-speed broadband and fiber plans for homes and businesses.">
+    <meta name="keywords" content="Internet provider Eldoret, high-speed internet, home internet, business internet, WiFi provider, broadband, fiber internet">
+    <meta name="author" content="Konnekt Smart Life">
+    <link rel="canonical" href="https://www.konnektsmartlife.com/" />
+  <!-- Social Media & Open Graph -->
+    <meta property="og:title" content="Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret">
+    <meta property="og:description" content="Get fast, affordable, and reliable internet services in Eldoret. Explore broadband and fiber plans for homes and businesses.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <!-- SEO Meta Tags -->
+    <title>Konnekt Smart Life | Fast Internet Provider in Eldoret - Home & Business Broadband</title>
+    <meta name="description" content="Konnekt Smart Life offers fast, reliable, and affordable internet services in Eldoret. Get high-speed fiber, broadband, and WiFi plans for homes and businesses today.">
+    <meta name="keywords" content="Internet provider Eldoret, fiber internet Eldoret, best WiFi plans, business internet, broadband provider, fast internet in Kenya">
+    <meta name="author" content="Konnekt Smart Life">
+    <link rel="canonical" href="https://www.konnektsmartlife.com/" />
+
+
+    <link rel="icon" href="https://www.konnektsmartlife.com/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
@@ -11,11 +34,44 @@
       rel="stylesheet"
     />
      <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha512-sA+UHE4/n4+U0sMcjPqxEcRjOHVn5QGACabBzYbB8+ql7vTqBJZf43Q6QwD2Dz2z/UeKFxmjKcOQ5dlVXc9fgA=="
-    crossorigin=""
-  />
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+     <!-- Structured Data: Service Page -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Internet Service Provider",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Konnekt Smart Life",
+          "image": "https://www.konnektsmartlifecom/assets/images/logo.png",
+          "url": "https://www.konnektsmartlife.com",
+          "telephone": "+254523000333",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kisumu Road",
+            "addressLocality": "Eldoret",
+            "addressRegion": "Uasin Gishu",
+            "postalCode": "30100",
+            "addressCountry": "KE"
+          }
+        },
+        "areaServed": {
+          "@type": "County",
+          "name": "Uasin Gishu"
+        },
+        "description": "Get fast, affordable, and reliable internet services in Eldoret. Konnekt Smart Life offers high-speed broadband and fiber plans for homes and businesses."
+      }
+    </script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -233,7 +289,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Basic Home', 'KSh 2,500')"
+                  onclick="openModal('package-modal', 'Home 5MBps', 'KSh 1,500')"
                 >
                   Choose Plan
                 </button>
@@ -269,7 +325,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Family Plus', 'KSh 4,000')"
+                  onclick="openModal('package-modal', 'Home 10MBps', 'KSh 2,000')"
                 >
                   Choose Plan
                 </button>
@@ -304,7 +360,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Premium Home', 'KSh 6,500')"
+                  onclick="openModal('package-modal', 'Home 30MBps', 'KSh 4,000')"
                 >
                   Choose Plan
                 </button>
@@ -348,7 +404,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Business Starter', 'KSh 8,000')"
+                  onclick="openModal('package-modal', 'Business Starter', 'KSh 6,000')"
                 >
                   Choose Plan
                 </button>
@@ -388,7 +444,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Business Pro', 'KSh 15,000')"
+                  onclick="openModal('package-modal', 'Business Pro', 'KSh 10,000')"
                 >
                   Choose Plan
                 </button>
@@ -427,7 +483,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Enterprise', 'KSh 25,000')"
+                  onclick="openModal('package-modal', 'Enterprise', 'KSh 20,000')"
                 >
                   Choose Plan
                 </button>
@@ -531,80 +587,15 @@
             <h3>Coverage Areas</h3>
             <p>
               We proudly serve multiple areas across Eldoret with reliable
-              high-speed internet connectivity. Click on an area to see details!
+              high-speed internet connectivity. Pins on the map shows estimate location. Click on an area to see details!
             </p>
 
             <div class="coverage-map-container" id="map">
-              <img
-                src="/placeholder.svg?height=600&width=800"
-                alt="Eldoret Coverage Map"
-                class="coverage-map-image"
-              />
-              <div
-                class="map-area"
-                data-area="Annex Estate"
-                style="top: 20%; left: 30%; width: 20%; height: 15%"
-              ></div>
-              <div
-                class="map-area"
-                data-area="Langas Estate"
-                style="top: 40%; left: 25%; width: 25%; height: 20%"
-              ></div>
-              <div
-                class="map-area"
-                data-area="Pioneer Estate"
-                style="top: 30%; left: 55%; width: 18%; height: 12%"
-              ></div>
-              <div
-                class="map-area"
-                data-area="Kapsoya"
-                style="top: 10%; left: 50%; width: 15%; height: 10%"
-              ></div>
-              <div
-                class="map-area"
-                data-area="Kimumu"
-                style="top: 5%; left: 70%; width: 10%; height: 8%"
-              ></div>
-              <div
-                class="map-area"
-                data-area="Huruma"
-                style="top: 60%; left: 40%; width: 22%; height: 18%"
-              ></div>
-
-              <div id="map-info-box" class="map-info-box">
-                <h4></h4>
-                <p></p>
-                <button class="btn btn-small" onclick="closeMapInfo()">
-                  Close
-                </button>
-              </div>
             </div>
 
             <div class="coverage-areas">
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Annex Estate</span>
-              </div>
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Langas Estate</span>
-              </div>
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Pioneer Estate</span>
-              </div>
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Kapsoya</span>
-              </div>
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Kimumu</span>
-              </div>
-              <div class="area-item">
-                <div class="area-dot"></div>
-                <span>Huruma</span>
-              </div>
+           
+              
             </div>
           </div>
 
@@ -702,7 +693,7 @@
 
             <div class="timeline">
               <div class="timeline-item fade-in-up">
-                <div class="timeline-year">2018</div>
+                <div class="timeline-year">2019</div>
                 <p>Founded in Eldoret with 50 customers</p>
               </div>
               <div class="timeline-item fade-in-up">
@@ -711,7 +702,7 @@
               </div>
               <div class="timeline-item fade-in-up">
                 <div class="timeline-year">2022</div>
-                <p>Launched enterprise solutions and hotspot services</p>
+                <p>Expanded enterprise solutions and hotspot coverage</p>
               </div>
               <div class="timeline-item fade-in-up">
                 <div class="timeline-year">2024</div>
@@ -722,8 +713,11 @@
 
           <div class="about-visual fade-in-right">
             <div class="about-image">
-              <i class="fas fa-globe"></i>
-              <p>Connecting Communities</p>
+              <div class="image_content">
+                <i class="fas fa-globe"></i>
+                <p>Connecting Communities</p>
+              </div>
+             <p class="credits">&copy copyright Mesh Photography</p>
             </div>
 
             <div class="reliability-badge">
@@ -731,7 +725,7 @@
                 <i class="fas fa-shield-alt"></i>
               </div>
               <div class="badge-info">
-                <h4>99.9% Uptime</h4>
+                <h4>90.9% Uptime</h4>
                 <p>Guaranteed Reliability</p>
               </div>
             </div>
@@ -816,7 +810,8 @@
                 <i class="fas fa-phone"></i>
                 <div>
                   <h4>Phone</h4>
-                  <p>+254 700 123 456</p>
+                  <p>+254523000333</p>
+                  <p>+254799333639</p>
                 </div>
               </div>
               <div class="contact-item">
@@ -830,16 +825,10 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
                   <h4>Office</h4>
-                  <p>Eldoret Town, Kenya</p>
+                  <p>Langas,Eldoret,Kenya</p>
                 </div>
               </div>
-              <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                  <h4>Support Hours</h4>
-                  <p>24/7 Customer Support</p>
-                </div>
-              </div>
+             
             </div>
 
             <div class="quick-links">
@@ -865,7 +854,9 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <i class="fas fa-wifi"></i>
+           <div class="logo">
+            <img src="./assets/images/logo.png" alt="Konnekt Smart Life Logo" />
+          </div>
             <span>Konnekt Smart Life</span>
           </div>
           <p>
@@ -938,18 +929,7 @@
                 ></textarea>
                 <span class="error-message"></span>
               </div>
-              <div class="form-group">
-                <label for="installation-date"
-                  >Preferred Installation Date</label
-                >
-                <input
-                  type="date"
-                  id="installation-date"
-                  name="installationDate"
-                  required
-                />
-                <span class="error-message"></span>
-              </div>
+             
               <button type="submit" class="btn btn-primary btn-full">
                 <span class="btn-text">Submit Application</span>
                 <span class="btn-loading">Processing...</span>
@@ -1049,7 +1029,7 @@
         <div class="modal-body">
           <div class="faq-list">
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div class="faq-question" >
                 <h4>What internet speeds do you offer?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1062,7 +1042,7 @@
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div class="faq-question" >
                 <h4>How long does installation take?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1075,33 +1055,29 @@
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div class="faq-question" >
                 <h4>Do you provide 24/7 customer support?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
                 <p>
-                  Yes, we provide round-the-clock customer support through
-                  phone, email, and our online portal. Our technical team is
-                  always ready to assist you.
+                  Our support team is here for you every day from 8:00 AM to midnight via phone. For on-site or specialized assistance, our skilled technicians are available from 8:00 AM to 6:00 PM to keep you connected and running smoothly.
                 </p>
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div class="faq-question" >
                 <h4>What payment methods do you accept?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
                 <p>
-                  We accept M-Pesa, bank transfers, cash payments, and online
-                  payments through our billing portal. Auto-billing options are
-                  also available.
+                  We accept M-Pesa payment through our paybill
                 </p>
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div class="faq-question" >
                 <h4>Is there a contract period?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1188,6 +1164,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script
   src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha512-mmxg+6FYO3bEvM1JhIPXpN2NKh+fMOMjZ3Q9gAk2Gh8ljBme7oBzK/MhLEeIvUHE1Pr2TPN2ljYKT2CkJdRjPA=="
@@ -1200,31 +1177,153 @@
     </script>
   
 
-<script>
-  // Initialize map centered in Eldoret, Kenya
-  const map = L.map('map').setView([0.5143, 35.2698], 13);
-
-  // Add OpenStreetMap tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Example locations with coverage radius in meters
-  const coveragePoints = [
-    { lat: 0.5143, lng: 35.2698, radius: 500 },
-    { lat: 0.5200, lng: 35.2800, radius: 300 },
-    { lat: 0.5100, lng: 35.2600, radius: 400 }
-  ];
-
-  // Add coverage circles
-  coveragePoints.forEach(point => {
-    L.circle([point.lat, point.lng], {
-      color: 'blue',
-      fillColor: '#3f83f8',
-      fillOpacity: 0.3,
-      radius: point.radius
-    }).addTo(map);
-  });
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/688427a12f66bc191640d3c4/1j123lkd8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
+<!--End of Tawk.to Script-->
+
+ <script>
+      var map = L.map("map").setView(
+        [0.5174245093903588, 35.275978524261745],
+        11
+      );
+      L.tileLayer(
+        "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}@2x.png?key=DaBnG1NgYfwD2EOg5u09",
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }
+      ).addTo(map);
+      //langas
+      var marker = L.marker([0.4682743, 35.259883]).addTo(map);
+var circle = L.circle([0.4682743, 35.259883], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 2000,
+      }).addTo(map);
+    //   kipkaren
+      var marker = L.marker([0.5080688494293019, 35.25754310070645]).addTo(map);
+      var circle = L.circle([0.5080688494293019, 35.25754310070645], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 1000,
+      }).addTo(map);
+
+    //   Teleview
+      var marker = L.marker([0.48847427485566475, 35.26888409501039]).addTo(map);
+      var circle = L.circle([0.48847427485566475, 35.26888409501039], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 400,
+      }).addTo(map);
+
+
+    //kipkenyo
+     var marker = L.marker([0.521691027078772, 35.22147266812227]).addTo(map);
+      var circle = L.circle([0.521691027078772, 35.22147266812227], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 2000,
+      }).addTo(map);
+
+    // west 1
+     var marker = L.marker([0.5273913764109056, 35.25531434165791]).addTo(map);
+      var circle = L.circle([0.5273913764109056, 35.25531434165791], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 500,
+      }).addTo(map);
+    //   west 2
+     var marker = L.marker([0.524283825767534, 35.25942981243881]).addTo(map);
+      var circle = L.circle([0.524283825767534, 35.25942981243881], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 200,
+      }).addTo(map);
+
+       // shauri
+     var marker = L.marker([0.526002538968474, 35.24662823497042]).addTo(map);
+      var circle = L.circle([0.526002538968474, 35.24662823497042], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 500,
+      }).addTo(map);
+
+    //   huruma
+       var marker = L.marker([0.5347631363352235, 35.24288986724648]).addTo(map);
+      var circle = L.circle([0.5347631363352235, 35.24288986724648], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 300,
+      }).addTo(map);
+
+    //  chebarus
+     var marker = L.marker([0.2913691543422562, 35.31851926911304]).addTo(map);
+      var circle = L.circle([0.2913691543422562, 35.31851926911304], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 300,
+      }).addTo(map);
+
+      //kesses
+        var marker = L.marker([0.288641490985702, 35.29211164548457]).addTo(map);
+      var circle = L.circle([0.288641490985702, 35.29211164548457], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 2000,
+      }).addTo(map);
+      //roadblock to milenne
+        var marker = L.marker([0.5537768701774953, 35.24142374657268]).addTo(map);
+      var circle = L.circle([0.5537768701774953, 35.24142374657268], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 1800,
+      }).addTo(map);
+
+    //   action villa
+    var marker = L.marker([0.534901580646218, 35.290496622063785]).addTo(map);
+      var circle = L.circle([0.534901580646218, 35.290496622063785], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 500,
+      }).addTo(map);
+      //munyaka
+       var marker = L.marker([0.5337933826119149, 35.30719643419353]).addTo(map);
+      var circle = L.circle([0.5337933826119149, 35.30719643419353], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 500,
+      }).addTo(map);
+      //junction
+       var marker = L.marker([0.5541847076900659, 35.31276487917977]).addTo(map);
+      var circle = L.circle([0.5541847076900659, 35.31276487917977], {
+        color: "green",
+        fillColor: "#00df81",
+        fillOpacity: 0.5,
+        radius: 500,
+      }).addTo(map);
+    </script>
   </body>
 </html>
