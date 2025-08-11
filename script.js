@@ -1,9 +1,31 @@
 // Global variables
-let currentTestimonialIndex = 0;
+
+
+ let currentTestimonialIndex = 0;
 const testimonials = document.querySelectorAll(".testimonial-card");
 const testimonialDots = document.querySelectorAll(".testimonial-dots .dot");
-let locations = [];
+const getConnectedForm = $("#contact-modal-form");
 const serverURL = "https://server.konnektsmartlife.com";
+
+let snackbarTimeout;
+const icons = {
+  success: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                      </svg>`,
+  error: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                   </svg>`,
+  info: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>`,
+};
+
+const colorSchemes = {
+  success: "snackbar-success",
+  error: "snackbar-error",
+  info: "snackbar-info",
+};
+let locations = [];
 
 async function getLocations() {
   try {
@@ -40,6 +62,42 @@ function populateLocations(data) {
 // DOM Content Loaded
 document.addEventListener("DOMContentLoaded", () => {
   initializeWebsite();
+});
+getConnectedForm.on("submit", async function (e) {
+  try {
+    e.preventDefault();
+    const body = $(this).serialize();
+    console.log(JSON.stringify(body));
+    $.ajax({
+      url:`${serverURL}/web/contact`,
+      method:'POST',
+      data:body,
+      success:function(data){
+        console.log(data)
+        showSnackbar('success',data.message)
+      },
+      error:function(err){
+        console.log(err)
+      }
+    })
+    return
+    const res = await fetch(`${serverURL}/web/contact`,{
+      method:'POST',
+      headers:{
+        'Content-type':'application/json',
+
+      },
+      body:body
+    });
+    if (!res.ok) {
+      const error = await res.json()
+      console.log(error)
+    }
+    const data = await res.json()
+    console.log(data)
+  } catch (error) {
+    showSnackbar("error",error.message||error)
+  }
 });
 
 // Initialize website functionality
@@ -494,17 +552,16 @@ function setupFAQ() {
   const faqQuestions = document.querySelectorAll(".faq-item");
   faqQuestions.forEach((question) => {
     question.addEventListener("click", () => {
-      console.log($(this))
+      console.log($(this));
       toggleFAQ(question);
     });
   });
 }
 
 function toggleFAQ(questionElement) {
-
   const faqItem = questionElement.closest(".faq-item");
   const isActive = faqItem.classList.contains("active");
-    faqItem.classList.add("active");
+  faqItem.classList.add("active");
 
   // Close all FAQ items
   document.querySelectorAll(".faq-item").forEach((item) => {
@@ -527,7 +584,69 @@ function scrollToSection(sectionId) {
     });
   }
 }
+// ==============================================================================
 
+
+
+function showSnackbar(type, message, duration = 5000) {
+  const snackbar = document.getElementById("snackbar");
+  const snackbarContent = document.getElementById("snackbar-content");
+  const snackbarIcon = document.getElementById("snackbar-icon");
+  const snackbarMessage = document.getElementById("snackbar-message");
+  if (snackbarTimeout) {
+    clearTimeout(snackbarTimeout);
+  }
+  console.log(icons[type]);
+  snackbarIcon.innerHTML = icons[type] || icons.info;
+  snackbarMessage.textContent = message;
+
+  snackbarContent.className = `snackbar-content flex items-center justify-between p-5 rounded-2xl text-white border border-white/20 ${
+    colorSchemes[type] || colorSchemes.info
+  }`;
+
+  snackbar.classList.remove("hide");
+  snackbar.classList.add("show");
+
+  snackbarTimeout = setTimeout(() => {
+    hideSnackbar();
+  }, duration);
+}
+
+function hideSnackbar() {
+  const snackbar = document.getElementById("snackbar");
+
+  if (snackbarTimeout) {
+    clearTimeout(snackbarTimeout);
+  }
+
+  snackbar.classList.remove("show");
+  snackbar.classList.add("hide");
+}
+
+document.addEventListener("click", function (event) {
+  const snackbar = document.getElementById("snackbar");
+  const isClickInsideSnackbar = snackbar.contains(event.target);
+  const isClickOnDemoButton =
+    event.target.closest("button") && !event.target.closest("#snackbar");
+
+  if (
+    !isClickInsideSnackbar &&
+    !isClickOnDemoButton &&
+    snackbar.classList.contains("show")
+  ) {
+    hideSnackbar();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    const snackbar = document.getElementById("snackbar");
+    if (snackbar.classList.contains("show")) {
+      hideSnackbar();
+    }
+  }
+});
+// ==============================================================================
 function showMessage(type, message) {
   // Create message element
   const messageEl = document.createElement("div");
@@ -596,3 +715,5 @@ window.addEventListener("unhandledrejection", (e) => {
   console.error("Unhandled promise rejection:", e.reason);
   // You could send this to an error reporting service
 });
+
+
