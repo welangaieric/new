@@ -46,6 +46,67 @@ section {
   align-items: center;
   justify-content: center;
 }
+ .cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* max-width: 500px; */
+    width: 80%;
+    background: var(--bg-light);
+    color: var(--text-color);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: var(--font-family);
+    z-index: 9999;
+    transition: var(--transition);
+  }
+
+  .cookie-banner p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .cookie-banner button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .accept-btn {
+    background: var(--primary-color);
+    color: var(--text-white);
+  }
+  .accept-btn:hover {
+    background: var(--primary-dark);
+  }
+
+  .reject-btn {
+    background: var(--secondary-color);
+    color: var(--text-white);
+  }
+  .reject-btn:hover {
+    background: #333;
+  }
+
+  .cookie-banner.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100px);
+    pointer-events: none;
+  }
 .container {
   width: 90%;
   display: flex;
@@ -228,7 +289,7 @@ section {
 
 /* Button Styles */
 .btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
@@ -237,12 +298,20 @@ section {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
+  gap: 10px;
   cursor: pointer;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
-
+.btn i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .btn-primary {
   background: var(--primary-color);
   color: var(--text-white);
@@ -811,8 +880,11 @@ section {
 }
 
 .packages-grid {
-  display: grid;
+  display: flex;
   width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
@@ -825,6 +897,7 @@ section {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  
 }
 
 .package-card:hover {
@@ -1493,6 +1566,7 @@ z-index: 10000;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
   filter: blur(4px);
+  display: none;
   /* backdrop-filter: blur(10px); */
 }
 
@@ -1502,12 +1576,19 @@ z-index: 10000;
     right: 1.5rem;
     max-width: 24rem;
   }
+  .tabs-container{
+    width: 70%;
+  }
+  .packages-grid{
+    flex-direction: row;
+  }
 }
 
 .snackbar.show {
   transform: translateY(0) scale(1);
   opacity: 1;
   filter: blur(0px);
+  display: block;
 }
 
 .snackbar.hide {
@@ -1515,6 +1596,7 @@ z-index: 10000;
   opacity: 0;
   filter: blur(2px);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.2, 1);
+  display: none;
 }
 
 .snackbar-content {
@@ -2118,9 +2200,9 @@ select {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  .packages-grid {
+  /* .packages-grid {
     grid-template-columns: 1fr;
-  }
+  } */
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -2196,17 +2278,18 @@ select {
 .loading {
   opacity: 0.7;
   pointer-events: none;
+  
 }
 
 .loading::after {
   content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 10%;
   width: 20px;
   height: 20px;
   margin: -10px 0 0 -10px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--bg-color);
   border-top: 2px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;

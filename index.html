@@ -4,28 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Konnekt Smart Life - Connecting Eldoret to the World</title>
-
-     <!-- SEO Meta Tags -->
-    <title>Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret</title>
-    <meta name="description" content="Get fast, affordable, and reliable internet services in Eldoret. Konnekt Smart Life offers high-speed broadband and fiber plans for homes and businesses.">
-    <meta name="keywords" content="Internet provider Eldoret, high-speed internet, home internet, business internet, WiFi provider, broadband, fiber internet">
-    <meta name="author" content="Konnekt Smart Life">
+    <!-- SEO Meta Tags -->
+    <title>
+      Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret
+    </title>
+    <meta
+      name="description"
+      content="Get fast, affordable, and reliable internet services in Eldoret. Konnekt Smart Life offers high-speed broadband and fiber plans for homes and businesses."
+    />
+    <meta
+      name="keywords"
+      content="Internet provider Eldoret, high-speed internet, home internet, business internet, WiFi provider, broadband, fiber internet"
+    />
+    <meta name="author" content="Konnekt Smart Life" />
     <link rel="canonical" href="https://www.konnektsmartlife.com/" />
-  <!-- Social Media & Open Graph -->
-    <meta property="og:title" content="Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret">
-    <meta property="og:description" content="Get fast, affordable, and reliable internet services in Eldoret. Explore broadband and fiber plans for homes and businesses.">
+    <!-- Social Media & Open Graph -->
+    <meta
+      property="og:title"
+      content="Konnekt Smart Life - Fast & Reliable Internet Provider in Eldoret"
+    />
+    <meta
+      property="og:description"
+      content="Get fast, affordable, and reliable internet services in Eldoret. Explore broadband and fiber plans for homes and businesses."
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- <!-- SEO Meta Tags -->
-    <title>Konnekt Smart Life | Fast Internet Provider in Eldoret - Home & Business Broadband</title>
-    <meta name="description" content="Konnekt Smart Life offers fast, reliable, and affordable internet services in Eldoret. Get high-speed fiber, broadband, and WiFi plans for homes and businesses today.">
-    <meta name="keywords" content="Internet provider Eldoret, fiber internet Eldoret, best WiFi plans, business internet, broadband provider, fast internet in Kenya">
-    <meta name="author" content="Konnekt Smart Life">
-    <link rel="canonical" href="https://www.konnektsmartlife.com/" />
-
-
-    <link rel="icon" href="https://www.konnektsmartlife.com/favicon.ico" type="image/x-icon">
+    <link
+      rel="icon"
+      href="https://www.konnektsmartlife.com/favicon.ico"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -33,13 +42,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-     <link
+    <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-     <!-- Structured Data: Service Page -->
+    
+    <!-- Structured Data: Service Page -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -81,7 +91,10 @@
           <div class="logo">
             <img src="./assets/images/logo.png" alt="Konnekt Smart Life Logo" />
           </div>
-          <span>Konnekt <span class="glow-text text-primary">Smart</span> Life</span>
+          <span
+            >Konnekt
+            <span class="glow-text text-primary">Smart</span> Life</span
+          >
         </div>
         <div class="nav-menu" id="nav-menu">
           <a href="#home" class="nav-link">Home</a>
@@ -105,7 +118,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <!-- Three.js Canvas for 3D Network Visualization -->
 
       <!-- Hero Container -->
       <div class="hero-container">
@@ -155,13 +167,13 @@
                   <span>Explore Packages</span>
                   <i class="fas fa-arrow-right"></i>
                 </button>
-                <button
+                <!-- <button
                   class="btn btn-outline-hero"
                   onclick="openModal('contact-modal')"
                 >
                   <i class="fas fa-phone"></i>
                   <span>Get Quote</span>
-                </button>
+                </button> -->
               </div>
             </div>
           </div>
@@ -260,7 +272,7 @@
           <!-- Home Plans -->
           <div class="tab-content active" id="home-tab">
             <div class="packages-grid">
-              <div class="package-card" >
+              <div class="package-card" data-aos="fade-up">
                 <div class="package-header">
                   <h3>Home 5MBps</h3>
                   <div class="package-speed">5 Mbps</div>
@@ -289,13 +301,13 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Home 5MBps', 'KSh 1,500')"
+                  onclick="openModal('package-modal', 'Home 5MBps', '1500','home')"
                 >
                   Choose Plan
                 </button>
               </div>
 
-              <div class="package-card popular" >
+              <div class="package-card popular" data-aos="fade-up">
                 <div class="popular-badge">Most Popular</div>
                 <div class="package-header">
                   <h3>Home 10MBps</h3>
@@ -325,13 +337,13 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Home 10MBps', 'KSh 2,000')"
+                  onclick="openModal('package-modal', 'Home 10MBps', '2000','home')"
                 >
                   Choose Plan
                 </button>
               </div>
 
-              <div class="package-card" >
+              <div class="package-card" data-aos="fade-up">
                 <div class="package-header">
                   <h3>HOME 30MBps</h3>
                   <div class="package-speed">30 MBps</div>
@@ -360,7 +372,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Home 30MBps', 'KSh 4,000')"
+                  onclick="openModal('package-modal', 'Home 30MBps', '4000','home')"
                 >
                   Choose Plan
                 </button>
@@ -371,13 +383,13 @@
           <!-- Business Plans -->
           <div class="tab-content" id="business-tab">
             <div class="packages-grid">
-              <div class="package-card" >
+              <div class="package-card" data-aos="fade-up">
                 <div class="package-header">
-                  <h3>Business Starter</h3>
-                  <div class="package-speed">30 Mbps</div>
+                  <h3>Business Plans</h3>
+                  <div class="package-speed">Starting @30 Mbps</div>
                   <div class="package-price">
-                    <span class="price">KSh 6,000</span>
-                    <span class="period">/month</span>
+                    <span class="price">KSh 200/MB</span>
+                    <!-- <span class="period">/month</span> -->
                   </div>
                 </div>
                 <div class="package-features">
@@ -404,13 +416,13 @@
                 </div>
                 <button
                   class="btn btn-primary btn-full"
-                  onclick="openModal('package-modal', 'Business Starter', 'KSh 6,000')"
+                  onclick="openModal('package-modal', 'Business', '200','business')"
                 >
                   Choose Plan
                 </button>
               </div>
 
-              <div class="package-card popular "">
+              <!-- <div class="package-card popular "">
                 <div class="popular-badge">Best Value</div>
                 <div class="package-header">
                   <h3>Business Pro</h3>
@@ -487,7 +499,7 @@
                 >
                   Choose Plan
                 </button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -506,7 +518,7 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card fade-in-up">
+          <div class="service-card "data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-credit-card"></i>
             </div>
@@ -529,7 +541,7 @@
             </button>
           </div>
 
-          <div class="service-card fade-in-up">
+          <div class="service-card "data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-sms"></i>
             </div>
@@ -552,7 +564,7 @@
             </button>
           </div>
 
-          <div class="service-card fade-in-up">
+          <div class="service-card "data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-broadcast-tower"></i>
             </div>
@@ -587,16 +599,13 @@
             <h3>Coverage Areas</h3>
             <p>
               We proudly serve multiple areas across Eldoret with reliable
-              high-speed internet connectivity. Pins on the map shows estimate location. Click on an area to see details!
+              high-speed internet connectivity. Pins on the map shows estimate
+              location. Click on an area to see details!
             </p>
 
-            <div class="coverage-map-container" id="map">
-            </div>
+            <div class="coverage-map-container" id="map"></div>
 
-            <div class="coverage-areas">
-           
-              
-            </div>
+            <div class="coverage-areas"></div>
           </div>
 
           <!-- Testimonials -->
@@ -717,7 +726,7 @@
                 <i class="fas fa-globe"></i>
                 <p>Connecting Communities</p>
               </div>
-             <p class="credits">&copy copyright Mesh Photography</p>
+              <p class="credits">&copy copyright Mesh Photography</p>
             </div>
 
             <div class="reliability-badge">
@@ -828,7 +837,6 @@
                   <p>Langas,Eldoret,Kenya</p>
                 </div>
               </div>
-             
             </div>
 
             <div class="quick-links">
@@ -854,9 +862,12 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-           <div class="logo">
-            <img src="./assets/images/logo.png" alt="Konnekt Smart Life Logo" />
-          </div>
+            <div class="logo">
+              <img
+                src="./assets/images/logo.png"
+                alt="Konnekt Smart Life Logo"
+              />
+            </div>
             <span>Konnekt Smart Life</span>
           </div>
           <p>
@@ -889,47 +900,31 @@
               <p class="package-price-modal" id="package-price">Price</p>
             </div>
             <form id="package-form" class="package-form">
+              <input type="text" name="profile" id="profile" hidden />
               <div class="form-group">
                 <label for="customer-name">Full Name</label>
-                <input
-                  type="text"
-                  id="customer-name"
-                  name="customerName"
-                  required
-                />
+                <input type="text" id="customer-name" name="name" required />
                 <span class="error-message"></span>
               </div>
               <div class="form-group">
                 <label for="customer-email">Email</label>
-                <input
-                  type="email"
-                  id="customer-email"
-                  name="customerEmail"
-                  required
-                />
+                <input type="email" id="customer-email" name="email" required />
                 <span class="error-message"></span>
               </div>
               <div class="form-group">
                 <label for="customer-phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="customer-phone"
-                  name="customerPhone"
-                  required
-                />
+                <input type="tel" id="customer-phone" name="phone" required />
                 <span class="error-message"></span>
               </div>
               <div class="form-group">
-                <label for="customer-address">Installation Address</label>
-                <textarea
-                  id="customer-address"
-                  name="customerAddress"
-                  rows="3"
-                  required
-                ></textarea>
+                <label for="location">Location</label>
+                <select id="location" name="location" required>
+                  <option value="">Select your location</option>
+                </select>
                 <span class="error-message"></span>
               </div>
-             
+              <div class="form-group" id="additional-field"></div>
+
               <button type="submit" class="btn btn-primary btn-full">
                 <span class="btn-text">Submit Application</span>
                 <span class="btn-loading">Processing...</span>
@@ -1029,7 +1024,7 @@
         <div class="modal-body">
           <div class="faq-list">
             <div class="faq-item">
-              <div class="faq-question" >
+              <div class="faq-question">
                 <h4>What internet speeds do you offer?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1042,7 +1037,7 @@
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" >
+              <div class="faq-question">
                 <h4>How long does installation take?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1055,29 +1050,30 @@
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" >
+              <div class="faq-question">
                 <h4>Do you provide 24/7 customer support?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
                 <p>
-                  Our support team is here for you every day from 8:00 AM to midnight via phone. For on-site or specialized assistance, our skilled technicians are available from 8:00 AM to 6:00 PM to keep you connected and running smoothly.
+                  Our support team is here for you every day from 8:00 AM to
+                  midnight via phone. For on-site or specialized assistance, our
+                  skilled technicians are available from 8:00 AM to 6:00 PM to
+                  keep you connected and running smoothly.
                 </p>
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" >
+              <div class="faq-question">
                 <h4>What payment methods do you accept?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
-                <p>
-                  We accept M-Pesa payment through our paybill
-                </p>
+                <p>We accept M-Pesa payment through our paybill</p>
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question" >
+              <div class="faq-question">
                 <h4>Is there a contract period?</h4>
                 <i class="fas fa-chevron-down"></i>
               </div>
@@ -1108,8 +1104,10 @@
             <div class="support-option">
               <i class="fas fa-phone"></i>
               <h4>Call Support</h4>
-              <p>+254 700 123 456</p>
-              <small>Available 24/7</small>
+              <p>+254 799 333 639</p>
+              <small>Available from 8am-12am</small>
+              <p>+254 523 000 333</p>
+              <small>Available from 8am-6pm</small>
             </div>
             <div class="support-option">
               <i class="fas fa-envelope"></i>
@@ -1121,11 +1119,18 @@
               <i class="fas fa-comments"></i>
               <h4>Live Chat</h4>
               <p>Chat with our team</p>
-              <button class="btn btn-primary btn-small">Start Chat</button>
+              <a
+                href="https://wa.me/+254799333639"
+                target="_blank"
+                class="btn btn-primary btn-small"
+                ><i class="fa-brands fa-whatsapp" style="color: white"></i>Start
+                Chat</a
+              >
+              <!-- <button class="btn btn-primary btn-small">Start Chat</button> -->
             </div>
           </div>
 
-          <div class="support-form">
+          <!-- <div class="support-form">
             <h4>Submit a Support Ticket</h4>
             <form id="support-form">
               <div class="form-group">
@@ -1160,53 +1165,86 @@
                 Submit Ticket
               </button>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
-        <div id="snackbar" class="snackbar">
-        <div id="snackbar-content" class="snackbar-content flex items-center justify-between p-5 rounded-2xl text-white border border-white/20">
-            <div class="flex items-center space-x-4">
-                <div id="snackbar-icon" class="snackbar-icon flex-shrink-0 w-6 h-6">
-                    Icons will be inserted here
-                </div>
-                <span id="snackbar-message" class="snackbar-message text-sm"></span>
-            </div>
-            <button onclick="hideSnackbar()" class="close-button  ml-4 text-white/80 hover:text-white">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
+    <div id="snackbar" class="snackbar">
+      <div
+        id="snackbar-content"
+        class="snackbar-content flex items-center justify-between p-5 rounded-2xl text-white border border-white/20"
+      >
+        <div class="flex items-center space-x-4">
+          <div id="snackbar-icon" class="snackbar-icon flex-shrink-0 w-6 h-6">
+            Icons will be inserted here
+          </div>
+          <span id="snackbar-message" class="snackbar-message text-sm"></span>
         </div>
+        <button
+          onclick="hideSnackbar()"
+          class="close-button ml-4 text-white/80 hover:text-white"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha512-mmxg+6FYO3bEvM1JhIPXpN2NKh+fMOMjZ3Q9gAk2Gh8ljBme7oBzK/MhLEeIvUHE1Pr2TPN2ljYKT2CkJdRjPA=="
-  crossorigin=""
-></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-banner hidden">
+      <p>
+        We use cookies to enhance your browsing experience and to store data.
+        Please choose whether to accept or reject cookies.
+      </p>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="accept-btn">Accept</button>
+        <button id="reject-cookies" class="reject-btn">Reject</button>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+      integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha512-mmxg+6FYO3bEvM1JhIPXpN2NKh+fMOMjZ3Q9gAk2Gh8ljBme7oBzK/MhLEeIvUHE1Pr2TPN2ljYKT2CkJdRjPA=="
+      crossorigin=""
+    ></script>
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
-  
 
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/688427a12f66bc191640d3c4/1j123lkd8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/688427a12f66bc191640d3c4/1j123lkd8";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
 
- <script>
+    <script>
       var map = L.map("map").setView(
         [0.5174245093903588, 35.275978524261745],
         11
@@ -1220,13 +1258,13 @@ s0.parentNode.insertBefore(s1,s0);
       ).addTo(map);
       //langas
       var marker = L.marker([0.4682743, 35.259883]).addTo(map);
-var circle = L.circle([0.4682743, 35.259883], {
+      var circle = L.circle([0.4682743, 35.259883], {
         color: "green",
         fillColor: "#00df81",
         fillOpacity: 0.5,
         radius: 2000,
       }).addTo(map);
-    //   kipkaren
+      //   kipkaren
       var marker = L.marker([0.5080688494293019, 35.25754310070645]).addTo(map);
       var circle = L.circle([0.5080688494293019, 35.25754310070645], {
         color: "green",
@@ -1235,8 +1273,10 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 1000,
       }).addTo(map);
 
-    //   Teleview
-      var marker = L.marker([0.48847427485566475, 35.26888409501039]).addTo(map);
+      //   Teleview
+      var marker = L.marker([0.48847427485566475, 35.26888409501039]).addTo(
+        map
+      );
       var circle = L.circle([0.48847427485566475, 35.26888409501039], {
         color: "green",
         fillColor: "#00df81",
@@ -1244,9 +1284,8 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 400,
       }).addTo(map);
 
-
-    //kipkenyo
-     var marker = L.marker([0.521691027078772, 35.22147266812227]).addTo(map);
+      //kipkenyo
+      var marker = L.marker([0.521691027078772, 35.22147266812227]).addTo(map);
       var circle = L.circle([0.521691027078772, 35.22147266812227], {
         color: "green",
         fillColor: "#00df81",
@@ -1254,16 +1293,16 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 2000,
       }).addTo(map);
 
-    // west 1
-     var marker = L.marker([0.5273913764109056, 35.25531434165791]).addTo(map);
+      // west 1
+      var marker = L.marker([0.5273913764109056, 35.25531434165791]).addTo(map);
       var circle = L.circle([0.5273913764109056, 35.25531434165791], {
         color: "green",
         fillColor: "#00df81",
         fillOpacity: 0.5,
         radius: 500,
       }).addTo(map);
-    //   west 2
-     var marker = L.marker([0.524283825767534, 35.25942981243881]).addTo(map);
+      //   west 2
+      var marker = L.marker([0.524283825767534, 35.25942981243881]).addTo(map);
       var circle = L.circle([0.524283825767534, 35.25942981243881], {
         color: "green",
         fillColor: "#00df81",
@@ -1271,8 +1310,8 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 200,
       }).addTo(map);
 
-       // shauri
-     var marker = L.marker([0.526002538968474, 35.24662823497042]).addTo(map);
+      // shauri
+      var marker = L.marker([0.526002538968474, 35.24662823497042]).addTo(map);
       var circle = L.circle([0.526002538968474, 35.24662823497042], {
         color: "green",
         fillColor: "#00df81",
@@ -1280,8 +1319,8 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 500,
       }).addTo(map);
 
-    //   huruma
-       var marker = L.marker([0.5347631363352235, 35.24288986724648]).addTo(map);
+      //   huruma
+      var marker = L.marker([0.5347631363352235, 35.24288986724648]).addTo(map);
       var circle = L.circle([0.5347631363352235, 35.24288986724648], {
         color: "green",
         fillColor: "#00df81",
@@ -1289,8 +1328,8 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 300,
       }).addTo(map);
 
-    //  chebarus
-     var marker = L.marker([0.2913691543422562, 35.31851926911304]).addTo(map);
+      //  chebarus
+      var marker = L.marker([0.2913691543422562, 35.31851926911304]).addTo(map);
       var circle = L.circle([0.2913691543422562, 35.31851926911304], {
         color: "green",
         fillColor: "#00df81",
@@ -1299,7 +1338,7 @@ var circle = L.circle([0.4682743, 35.259883], {
       }).addTo(map);
 
       //kesses
-        var marker = L.marker([0.288641490985702, 35.29211164548457]).addTo(map);
+      var marker = L.marker([0.288641490985702, 35.29211164548457]).addTo(map);
       var circle = L.circle([0.288641490985702, 35.29211164548457], {
         color: "green",
         fillColor: "#00df81",
@@ -1307,7 +1346,7 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 2000,
       }).addTo(map);
       //roadblock to milenne
-        var marker = L.marker([0.5537768701774953, 35.24142374657268]).addTo(map);
+      var marker = L.marker([0.5537768701774953, 35.24142374657268]).addTo(map);
       var circle = L.circle([0.5537768701774953, 35.24142374657268], {
         color: "green",
         fillColor: "#00df81",
@@ -1315,8 +1354,8 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 1800,
       }).addTo(map);
 
-    //   action villa
-    var marker = L.marker([0.534901580646218, 35.290496622063785]).addTo(map);
+      //   action villa
+      var marker = L.marker([0.534901580646218, 35.290496622063785]).addTo(map);
       var circle = L.circle([0.534901580646218, 35.290496622063785], {
         color: "green",
         fillColor: "#00df81",
@@ -1324,7 +1363,7 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 500,
       }).addTo(map);
       //munyaka
-       var marker = L.marker([0.5337933826119149, 35.30719643419353]).addTo(map);
+      var marker = L.marker([0.5337933826119149, 35.30719643419353]).addTo(map);
       var circle = L.circle([0.5337933826119149, 35.30719643419353], {
         color: "green",
         fillColor: "#00df81",
@@ -1332,7 +1371,7 @@ var circle = L.circle([0.4682743, 35.259883], {
         radius: 500,
       }).addTo(map);
       //junction
-       var marker = L.marker([0.5541847076900659, 35.31276487917977]).addTo(map);
+      var marker = L.marker([0.5541847076900659, 35.31276487917977]).addTo(map);
       var circle = L.circle([0.5541847076900659, 35.31276487917977], {
         color: "green",
         fillColor: "#00df81",

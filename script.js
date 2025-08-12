@@ -1,10 +1,12 @@
 // Global variables
 
-
- let currentTestimonialIndex = 0;
+let currentTestimonialIndex = 0;
 const testimonials = document.querySelectorAll(".testimonial-card");
 const testimonialDots = document.querySelectorAll(".testimonial-dots .dot");
 const getConnectedForm = $("#contact-modal-form");
+const packageForm = $("#package-form");
+
+// const serverURL = "http://localhost:3000";
 const serverURL = "https://server.konnektsmartlife.com";
 
 let snackbarTimeout;
@@ -42,7 +44,10 @@ async function getLocations() {
   }
 }
 
-locations = getLocations().then((data) => populateLocations(data));
+getLocations().then((data) => {
+  populateLocations(data);
+  populateLocationField(data);
+});
 // console.log("Locations", locations);
 function populateLocations(data) {
   const locationsDisplay = document.querySelector(".coverage-areas");
@@ -58,7 +63,16 @@ function populateLocations(data) {
     });
   }
 }
-
+function populateLocationField(data) {
+  const locationsDisplay = document.querySelector("#location");
+  if (locationsDisplay) {
+    data.forEach((location) => {
+      // console.log(location);
+      const template = `<option value=${location.name}>${location.name}</option>`;
+      locationsDisplay.innerHTML += template;
+    });
+  }
+}
 // DOM Content Loaded
 document.addEventListener("DOMContentLoaded", () => {
   initializeWebsite();
@@ -69,37 +83,82 @@ getConnectedForm.on("submit", async function (e) {
     const body = $(this).serialize();
     console.log(JSON.stringify(body));
     $.ajax({
-      url:`${serverURL}/web/contact`,
-      method:'POST',
-      data:body,
-      success:function(data){
-        console.log(data)
-        showSnackbar('success',data.message)
+      url: `${serverURL}/web/contact`,
+      method: "POST",
+      data: body,
+      success: function (data) {
+        console.log(data);
+        showSnackbar("success", data.message);
       },
-      error:function(err){
-        console.log(err)
-      }
-    })
-    return
-    const res = await fetch(`${serverURL}/web/contact`,{
-      method:'POST',
-      headers:{
-        'Content-type':'application/json',
-
+      error: function (err) {
+        console.log(err);
       },
-      body:body
     });
-    if (!res.ok) {
-      const error = await res.json()
-      console.log(error)
-    }
-    const data = await res.json()
-    console.log(data)
   } catch (error) {
-    showSnackbar("error",error.message||error)
+    showSnackbar("error", error.message || error);
   }
 });
 
+packageForm.on("submit", async function (e) {
+  try {
+    e.preventDefault();
+    let body = $(this).serialize();
+    console.log(body);
+    // return
+    $.ajax({
+      url: `${serverURL}/web/select-profile`,
+      method: "POST",
+      data: body,
+      success: function (data) {
+        console.log(data);
+        showSnackbar("success", data.message);
+      },
+      error: function (err) {
+        showSnackbar("error", error.message);
+        console.log(err);
+      },
+    });
+  } catch (error) {
+    showSnackbar("error", error.message || error);
+  }
+});
+$("#contact-form").on("submit", function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    // Get form values
+    let firstName = $("#firstName").val().trim();
+    let lastName = $("#lastName").val().trim();
+    let email = $("#email").val().trim();
+    let phone = $("#phone").val().trim();
+    let message = $("#message").val().trim();
+
+    // Combine into single "name"
+    let name = `${firstName} ${lastName}`.trim();
+
+    // Create data object
+    let formData = {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      service:'General Enquiry'
+    };
+
+    // Send AJAX request
+    $.ajax({
+      url:`${serverURL}/web/send-mail`, 
+      type: "POST",
+      data: formData,
+      success: function (data) {
+        console.log(data);
+        showSnackbar("success", data.message);
+      },
+      error: function (err) {
+        showSnackbar("error", error.message);
+        console.log(err);
+      },
+    });
+  });
 // Initialize website functionality
 function initializeWebsite() {
   setupNavigation();
@@ -302,8 +361,10 @@ function handleFormSubmit(e) {
 
   // Show loading state
   const submitButton = form.querySelector('button[type="submit"]');
+  //  submitButton.textContent=''
   submitButton.classList.add("loading");
   submitButton.disabled = true;
+ 
 
   // Simulate form submission
   setTimeout(() => {
@@ -312,10 +373,6 @@ function handleFormSubmit(e) {
     submitButton.disabled = false;
 
     // Show success message
-    showMessage(
-      "success",
-      "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours."
-    );
 
     // Reset form
     form.reset();
@@ -443,7 +500,7 @@ function openModal(modalId, ...args) {
 
   // Populate modal content based on type
   if (modalId === "package-modal" && args.length >= 2) {
-    populatePackageModal(args[0], args[1]);
+    populatePackageModal(args[0], args[1], args[2]);
   } else if (modalId === "service-modal" && args.length >= 1) {
     populateServiceModal(args[0]);
   }
@@ -460,9 +517,44 @@ function closeModal(modalId) {
   document.body.style.overflow = "";
 }
 
-function populatePackageModal(packageName, packagePrice) {
+function populatePackageModal(packageName, packagePrice, type) {
+  $("#package-form").trigger("reset");
+  $("#additional-field").html("");
+
+  if (type === "business") {
+    let template = `
+                <label for="customer-phone">Package (Enter your package capacity)</label>
+                <input
+                  type="number"
+                  id="b-package"
+                 
+                  min="30"
+                  max="1024"
+                  placeholder='Enter your package starting from 30'
+                  required
+                />
+                <span id='package-error' class="error-message"></span>
+                <input name='type' id='package-type' type='text' value='business' hidden>
+              `;
+    $("#additional-field").html(template);
+    const profile = $("#b-package");
+    profile.on("keyup", () => {
+      $("#package-name").html(`Business ${profile.val()} MBps`);
+      const amount =( 200 * profile.val()).toLocaleString();
+      $("#package-price").html(`KSH.${amount}`);
+      $("#profile").val(`Business ${profile.val()} MBps`);
+      if(profile.val()<30){
+        $('#package-error').addClass('show')
+        $('#package-error').html('The value entered should not be less than 30MBps')
+      }else{
+        $('#package-error').removeClass('show')
+
+      }
+    });
+  }
   document.getElementById("package-name").textContent = packageName;
-  document.getElementById("package-price").textContent = packagePrice;
+  $("#profile").val(packageName);
+  document.getElementById("package-price").textContent = `Ksh ${packagePrice}`;
   document.getElementById(
     "package-modal-title"
   ).textContent = `${packageName} - Application`;
@@ -585,8 +677,7 @@ function scrollToSection(sectionId) {
   }
 }
 // ==============================================================================
-
-
+// showSnackbar('')
 
 function showSnackbar(type, message, duration = 5000) {
   const snackbar = document.getElementById("snackbar");
@@ -715,5 +806,39 @@ window.addEventListener("unhandledrejection", (e) => {
   console.error("Unhandled promise rejection:", e.reason);
   // You could send this to an error reporting service
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-consent-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
 
+    // Show banner if no choice made
+    if (!localStorage.getItem("cookieChoice")) {
+        banner.classList.remove("hidden");
+    } else if (localStorage.getItem("cookieChoice") === "accepted") {
+        collectCookies();
+    }
 
+    // Accept cookies
+    acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieChoice", "accepted");
+        banner.classList.add("hidden");
+        collectCookies();
+    });
+
+    // Reject cookies
+    rejectBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieChoice", "rejected");
+        banner.classList.add("hidden");
+        // No cookie collection
+    });
+    // Function to send cookies to backend
+    function collectCookies() {
+        let cookies = document.cookie;
+
+        fetch(`${serverURL}/web/collect-cookies`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cookies })
+        }).catch(err => console.error("Error sending cookies:", err));
+    }
+});
