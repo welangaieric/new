@@ -1,0 +1,19 @@
+{
+  "name": "Konnekt Smart Life",
+  "short_name": "KSL",
+  "icons": [
+    {
+      "src": "/assets/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00df81",
+  "background_color": "#fff",
+  "display": "standalone"
+}
