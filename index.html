@@ -1,69 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Konnekt Smart Life - Fast & Reliable Internet in Eldoret</title>
-  <meta name="description" content="Konnekt Smart Life brings fast, affordable, and reliable internet to every home and business in Eldoret. Explore broadband and fiber plans designed for our community." />
-  <meta name="author" content="Konnekt Smart Life" />
+    <title>Konnekt Smart Life - Fast & Reliable Internet in Eldoret</title>
+    <meta
+      name="description"
+      content="Konnekt Smart Life offers fast, reliable, and affordable high-speed internet in Eldoret for homes and businesses. Explore broadband and fiber plans today."
+    />
+    <meta name="author" content="Konnekt Smart Life" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.konnektsmartlife.com/" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.konnektsmartlife.com/" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.konnektsmartlife.com/favicon.ico" type="image/x-icon" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://www.konnektsmartlife.com/favicon.ico"
+      type="image/x-icon"
+    />
 
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://www.konnektsmartlife.com/assets/images/apple-touch-icon.png">
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://www.konnektsmartlife.com/assets/images/apple-touch-icon.png"
+    />
 
-  <!-- Social Media / Open Graph -->
-  <meta property="og:title" content="Konnekt Smart Life - Fast & Reliable Internet in Eldoret" />
-  <meta property="og:description" content="Konnekt Smart Life provides high-speed broadband and fiber internet services to homes and businesses in Eldoret. Reliable, affordable, and community-focused." />
-  <meta property="og:url" content="https://www.konnektsmartlife.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.konnektsmartlife.com/assets/images/logo.png" />
+    <!-- Social Media / Open Graph -->
+    <meta
+      property="og:title"
+      content="Konnekt Smart Life - Fast & Reliable Internet in Eldoret"
+    />
+    <meta
+      property="og:description"
+      content="Konnekt Smart Life offers fast, reliable, and affordable high-speed internet in Eldoret for homes and businesses. Explore broadband and fiber plans today."
+    />
+    <meta property="og:url" content="https://www.konnektsmartlife.com/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://www.konnektsmartlife.com/assets/images/logo.png"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Internet Service Provider",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Konnekt Smart Life",
-      "image": "https://www.konnektsmartlife.com/assets/images/logo.png",
-      "url": "https://www.konnektsmartlife.com",
-      "telephone": "+254523000333",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kisumu Road",
-        "addressLocality": "Eldoret",
-        "addressRegion": "Uasin Gishu",
-        "postalCode": "30100",
-        "addressCountry": "KE"
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Internet Service Provider",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Konnekt Smart Life",
+          "image": "https://www.konnektsmartlife.com/assets/images/logo.png",
+          "url": "https://www.konnektsmartlife.com",
+          "telephone": "+254523000333",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kisumu Road",
+            "addressLocality": "Eldoret",
+            "addressRegion": "Uasin Gishu",
+            "postalCode": "30100",
+            "addressCountry": "KE"
+          }
+        },
+        "areaServed": {
+          "@type": "County",
+          "name": "Uasin Gishu"
+        },
+        "description": "Konnekt Smart Life brings fast, affordable, and reliable internet to every home and business in Eldoret. Explore broadband and fiber plans designed for our community."
       }
-    },
-    "areaServed": {
-      "@type": "County",
-      "name": "Uasin Gishu"
-    },
-    "description": "Konnekt Smart Life brings fast, affordable, and reliable internet to every home and business in Eldoret. Explore broadband and fiber plans designed for our community."
-  }
-  </script>
+    </script>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-</head>
+    <!-- Scripts -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
 
   <body>
     <!-- Navigation -->
@@ -100,58 +129,60 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-
       <!-- Hero Container -->
       <div class="hero-container">
         <div class="hero-content">
           <!-- Main Content -->
-       <div class="hero-main">
-  <div class="hero-text-section">
-    <div class="hero-badge fade-in-up">
-      <i class="fas fa-wifi"></i>
-      <span>Connecting Communities Since 2019</span>
-    </div>
+          <div class="hero-main">
+            <div class="hero-main">
+              <div class="hero-text-section">
+                <div class="hero-badge fade-in-up">
+                  <i class="fas fa-wifi"></i>
+                  <span>Connecting Communities Since 2019</span>
+                </div>
 
-    <h1 class="hero-title fade-in-up stagger-1">
-      Bringing
-      <span class="text-primary glow-text">Konnekt Smart Life</span><br />
-      to Every Home & Business in
-      <span class="hero-title-accent">Eldoret</span>
-    </h1>
+                <h1 class="hero-title fade-in-up stagger-1">
+                  Bringing
+                  <span class="text-primary glow-text">Konnekt Smart Life</span
+                  ><br />
+                  to Every Home & Business in
+                  <span class="hero-title-accent">Eldoret</span>
+                </h1>
 
-    <p class="hero-subtitle fade-in-up stagger-2">
-      <strong>Konnekt Smart Life</strong> delivers lightning-fast internet to every home and business in
-      <strong>Eldoret</strong>, bridging the digital divide with reliable, affordable service designed
-      specifically for our growing community.
-    </p>
+                <p class="hero-subtitle fade-in-up stagger-2">
+                  <strong>Konnekt Smart Life</strong> delivers fast, reliable,
+                  and affordable high-speed internet to every home and business
+                  in <strong>Eldoret</strong>. Explore our broadband and fiber
+                  plans designed specifically for our community.
+                </p>
 
-    <div class="hero-features fade-in-up stagger-3">
-      <div class="feature-item">
-        <i class="fas fa-bolt"></i>
-        <span>Ultra-Fast Speeds Across Eldoret</span>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-shield-alt"></i>
-        <span>99.9% Uptime with Konnekt Smart Life</span>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-headset"></i>
-        <span>24/7 Support for Homes & Businesses</span>
-      </div>
-    </div>
+                <div class="hero-features fade-in-up stagger-3">
+                  <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>High-Speed Internet for Homes & Businesses</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>99.9% Uptime with Konnekt Smart Life</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support Across Eldoret</span>
+                  </div>
+                </div>
 
-    <div class="hero-cta fade-in-up stagger-4">
-      <button
-        class="btn btn-primary btn-hero"
-        onclick="scrollToSection('packages')"
-      >
-        <span>Explore Packages</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-</div>
-
+                <div class="hero-cta fade-in-up stagger-4">
+                  <button
+                    class="btn btn-primary btn-hero"
+                    onclick="scrollToSection('packages')"
+                  >
+                    <span>Explore Packages</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Stats Section -->
           <div class="hero-stats fade-in-up stagger-5">
@@ -493,7 +524,7 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card "data-aos="fade-down">
+          <div class="service-card" data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-credit-card"></i>
             </div>
@@ -516,7 +547,7 @@
             </button>
           </div>
 
-          <div class="service-card "data-aos="fade-down">
+          <div class="service-card" data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-sms"></i>
             </div>
@@ -539,7 +570,7 @@
             </button>
           </div>
 
-          <div class="service-card "data-aos="fade-down">
+          <div class="service-card" data-aos="fade-down">
             <div class="service-icon">
               <i class="fas fa-broadcast-tower"></i>
             </div>
