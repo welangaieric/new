@@ -68,7 +68,7 @@ function populateLocationField(data) {
   if (locationsDisplay) {
     data.forEach((location) => {
       // console.log(location);
-      const template = `<option value=${location.name}>${location.name}</option>`;
+      const template = `<option value=${JSON.stringify(location.name)}>${location.name}</option>`;
       locationsDisplay.innerHTML += template;
     });
   }
@@ -80,6 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
 getConnectedForm.on("submit", async function (e) {
   try {
     e.preventDefault();
+       const form = e.target;
+
+  // Validate form
+  if (!validateForm(form)) {
+    return;
+  }
     const body = $(this).serialize();
     console.log(JSON.stringify(body));
     $.ajax({
@@ -102,15 +108,21 @@ getConnectedForm.on("submit", async function (e) {
 packageForm.on("submit", async function (e) {
   try {
     e.preventDefault();
+      const form = e.target;
+
+  // Validate form
+  if (!validateForm(form)) {
+    return;
+  }
     let body = $(this).serialize();
-    console.log(body);
+    // console.log(body);
     // return
     $.ajax({
       url: `${serverURL}/web/select-profile`,
       method: "POST",
       data: body,
       success: function (data) {
-        console.log(data);
+        // console.log(data);
         showSnackbar("success", data.message);
       },
       error: function (err) {
@@ -124,7 +136,12 @@ packageForm.on("submit", async function (e) {
 });
 $("#contact-form").on("submit", function (e) {
     e.preventDefault(); // Prevent page reload
+   const form = e.target;
 
+  // Validate form
+  if (!validateForm(form)) {
+    return;
+  }
     // Get form values
     let firstName = $("#firstName").val().trim();
     let lastName = $("#lastName").val().trim();
