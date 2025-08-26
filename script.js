@@ -63,6 +63,7 @@ function populateLocations(data) {
     });
   }
 }
+
 function populateLocationField(data) {
   const locationsDisplay = document.querySelector("#location");
   if (locationsDisplay) {
