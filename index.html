@@ -134,6 +134,23 @@
         </button>
       </div>
     </nav>
+<!-- Accessibility Toggle Button -->
+<div id="a11y-toggle">
+  <i class="fa-solid fa-wheelchair"></i>
+</div>
+
+<!-- Accessibility Panel -->
+<div id="a11y-panel">
+  <button data-action="contrast"><i class="fa-solid fa-circle-half-stroke"></i> Contrast</button>
+  <!-- <button data-action="dark"><i class="fa-solid fa-moon"></i> Dark</button> -->
+  <button data-action="increase">A+</button>
+  <button data-action="decrease">A-</button>
+  <button data-action="dyslexia"> Dyslexia</button>
+  <button data-action="links"><i class="fa-solid fa-link"></i> Highlight Links</button>
+  <button data-action="pause"><i class="fa-solid fa-pause"></i> Pause Animations</button>
+  <button data-action="reset"><i class="fa-solid fa-recycle"></i> Reset</button>
+</div>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -1239,6 +1256,68 @@
     <script>
       AOS.init();
     </script>
+<script>
+let fontSize = 16;
+
+function setFont(size) {
+  document.documentElement.style.fontSize = size + "px";
+}
+
+// Toggle accessibility panel
+document.getElementById("a11y-toggle").onclick = function () {
+  document.getElementById("a11y-panel").classList.toggle("show");
+};
+
+// Handle accessibility actions
+document.getElementById("a11y-panel").addEventListener("click", (e) => {
+  const action = e.target.dataset.action;
+
+  switch (action) {
+    case "contrast":
+      document.body.classList.toggle("high-contrast");
+      break;
+
+    case "dark":
+      document.body.classList.toggle("dark-mode");
+      break;
+
+    case "increase":
+      fontSize++;
+      setFont(fontSize);
+      break;
+
+    case "decrease":
+      fontSize--;
+      setFont(fontSize);
+      break;
+
+    case "dyslexia":
+      document.body.classList.toggle("dyslexia-font");
+      break;
+
+    case "links":
+      document.body.classList.toggle("highlight-links");
+      break;
+
+    case "pause":
+      document.body.classList.toggle("paused-animations");
+      break;
+
+    case "reset":
+      document.body.classList.remove(
+        "high-contrast",
+        "dark-mode",
+        "dyslexia-font",
+        "highlight-links",
+        "paused-animations"
+      );
+      fontSize = 16;
+      setFont(fontSize);
+      break;
+  }
+});
+</script>
+
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
